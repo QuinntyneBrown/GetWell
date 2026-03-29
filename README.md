@@ -35,9 +35,10 @@ Be there for the person who has no one to call at 3am. The person who can't affo
 ```
 ├── App.tsx                        # App entry point
 ├── src/
-│   ├── components/                # ChatBubble, ChatInput, PrayerPrompt, ScriptureBlock, ScreenHeader
+│   ├── components/                # ChatBubble, ChatInput, CrisisBanner, DonationAmountButton,
+│   │                              # NavigationRow, PrayerPrompt, ResourceCard, ScriptureBlock, ScreenHeader
 │   ├── navigation/AppNavigator.tsx
-│   ├── screens/                   # Screen implementations
+│   ├── screens/                   # WelcomeScreen, ChatScreen, CrisisResourcesScreen
 │   ├── theme/                     # Colors, spacing, typography
 │   └── types/                     # Shared TypeScript types
 ├── server/
@@ -48,6 +49,8 @@ Be there for the person who has no one to call at 3am. The person who can't affo
 │       │   └── crisis/            # CrisisDetectionService, CrisisAnalyzer, KeywordMatcher
 │       └── types/                 # Chat, crisis, donation types
 ├── e2e/                           # Detox E2E tests (screenplay pattern)
+│   └── screenplay/                # Abilities, actors, interactions (Tap, TypeText, See, ScrollTo),
+│                                  # tasks (SelectMode, SendMessage)
 ├── docs/
 │   ├── specs/                     # L1 (high-level) and L2 (detailed) requirements
 │   ├── detailed-designs/          # Per-screen technical designs with diagrams
