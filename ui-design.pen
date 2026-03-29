@@ -1,0 +1,3330 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "YWIB2",
+      "x": 0,
+      "y": 0,
+      "name": "Welcome / Onboarding",
+      "clip": true,
+      "width": 402,
+      "height": 874,
+      "fill": "#F5F4F1",
+      "cornerRadius": 20,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "L33Ob",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "2Tv7H",
+              "name": "timeText",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jmL67",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 24,
+          "padding": [
+            0,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "WMjVk",
+              "name": "Spacer",
+              "width": "fill_container",
+              "height": 24
+            },
+            {
+              "type": "frame",
+              "id": "pF7rp",
+              "name": "Logo Circle",
+              "width": 80,
+              "height": 80,
+              "fill": "#C8F0D8",
+              "cornerRadius": 100,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "lfxKA",
+                  "x": 22,
+                  "y": 22,
+                  "name": "heartIcon",
+                  "width": 36,
+                  "height": 36,
+                  "iconFontName": "heart",
+                  "iconFontFamily": "lucide",
+                  "fill": "#3D8A5A"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "Mjx2o",
+              "name": "Title",
+              "fill": "#1A1918",
+              "content": "Get Well",
+              "fontFamily": "Outfit",
+              "fontSize": 32,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "1dadi",
+              "name": "Subtitle",
+              "fill": "#6D6C6A",
+              "content": "Free. Anonymous. Always here.",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "P0GKw",
+              "name": "Mission",
+              "fill": "#6D6C6A",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "24/7 emotional support for anyone, anytime. No barriers. No judgment.",
+              "textAlign": "center",
+              "fontFamily": "Outfit",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "qwQUk",
+              "name": "Choose Your Path",
+              "fill": "#1A1918",
+              "content": "Choose your path",
+              "fontFamily": "Outfit",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "YKfJ5",
+              "name": "Mode Cards Row",
+              "width": "fill_container",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "8VEwL",
+                  "name": "Card Get Well",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#1A191808",
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "blur": 12
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    24,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "eDNL7",
+                      "name": "Icon Circle Green",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#C8F0D8",
+                      "cornerRadius": 100,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Asl8n",
+                          "x": 12,
+                          "y": 12,
+                          "name": "card1Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "heart",
+                          "iconFontFamily": "lucide",
+                          "fill": "#3D8A5A"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "IYc7X",
+                      "name": "Card1 Title",
+                      "fill": "#1A1918",
+                      "content": "Get Well",
+                      "textAlign": "center",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lWGmT",
+                      "name": "Card1 Desc",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Warm, empathetic, judgment-free support",
+                      "textAlign": "center",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EJdMk",
+                  "name": "Card Get Well Faith",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#1A191808",
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "blur": 12
+                  },
+                  "layout": "vertical",
+                  "gap": 12,
+                  "padding": [
+                    24,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "v4e8Y",
+                      "name": "Icon Circle Coral",
+                      "width": 48,
+                      "height": 48,
+                      "fill": "#F0DDD2",
+                      "cornerRadius": 100,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "BBsbK",
+                          "x": 12,
+                          "y": 12,
+                          "name": "card2Icon",
+                          "width": 24,
+                          "height": 24,
+                          "iconFontName": "cross",
+                          "iconFontFamily": "lucide",
+                          "fill": "#D89575"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZcDqu",
+                      "name": "Card2 Title",
+                      "fill": "#1A1918",
+                      "content": "Get Well Faith",
+                      "textAlign": "center",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "sC8X3",
+                      "name": "Card2 Desc",
+                      "fill": "#6D6C6A",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Christian-values-based support with prayer & scripture",
+                      "textAlign": "center",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "9Dg7a",
+              "name": "Bottom Spacer",
+              "width": "fill_container",
+              "height": "fill_container"
+            },
+            {
+              "type": "frame",
+              "id": "12g5W",
+              "name": "Privacy Row",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                16,
+                0
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "wBc4q",
+                  "name": "shieldIcon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "shield-check",
+                  "iconFontFamily": "lucide",
+                  "fill": "#9C9B99"
+                },
+                {
+                  "type": "text",
+                  "id": "Z21vo",
+                  "name": "Privacy Text",
+                  "fill": "#9C9B99",
+                  "content": "No accounts. No data stored. Completely anonymous.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xwHLa",
+      "x": 462,
+      "y": 0,
+      "name": "Chat - Get Well",
+      "clip": true,
+      "width": 402,
+      "height": 874,
+      "fill": "#F5F4F1",
+      "cornerRadius": 20,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "xC7ED",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "iS5XE",
+              "name": "timeText",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BuDk2",
+          "name": "Header",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "gap": 12,
+          "padding": [
+            12,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "bm4RA",
+              "name": "backIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-left",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            },
+            {
+              "type": "frame",
+              "id": "zMFGJ",
+              "name": "Title Area",
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "meQ96",
+                  "name": "titleText",
+                  "fill": "#1A1918",
+                  "content": "Get Well",
+                  "fontFamily": "Outfit",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "SmQCo",
+                  "name": "subtitleText",
+                  "fill": "#9C9B99",
+                  "content": "Here for you, always",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "PpAzb",
+              "name": "Spacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "icon_font",
+              "id": "EvVKe",
+              "name": "moreIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "ellipsis-vertical",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "6Umig",
+          "name": "Green Accent Line",
+          "width": "fill_container",
+          "height": 2,
+          "fill": "#3D8A5A"
+        },
+        {
+          "type": "frame",
+          "id": "sP8SI",
+          "name": "Chat Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            16,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "HlRz4",
+              "name": "AI Message Row 1",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "a6oXh",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 100,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "qKzT6",
+                      "name": "heartIcon1",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "nIkJC",
+                  "name": "AI Bubble",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000000D",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 3
+                  },
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "L1OrY",
+                      "name": "msgText1",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": 248,
+                      "content": "Hey there. I'm glad you're here. There's no rush — take your time. What's on your mind?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZNQH7",
+                      "name": "timeText1",
+                      "fill": "#9C9B99",
+                      "content": "Just now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Pvyot",
+              "name": "User Message Row",
+              "width": "fill_container",
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xjrrJ",
+                  "name": "User Bubble",
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dKNfL",
+                      "name": "userText",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 240,
+                      "content": "I've been feeling really overwhelmed lately. I don't know who to talk to.",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "X2eU0",
+                      "name": "userTime",
+                      "fill": "#C8F0D8",
+                      "content": "Now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zo5Sk",
+              "name": "AI Message Row 2",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "aizUm",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 100,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "CcTS0",
+                      "name": "heartIcon2",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GrG0C",
+                  "name": "AI Bubble",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000000D",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 3
+                  },
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nS7cQ",
+                      "name": "msgText2",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": 248,
+                      "content": "I hear you, and I want you to know — you're not alone in this. Feeling overwhelmed is completely valid. Can you tell me a little more about what's been weighing on you?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RsXEe",
+                      "name": "timeText2",
+                      "fill": "#9C9B99",
+                      "content": "Just now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QOTfe",
+          "name": "Input Area",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E4E1"
+          },
+          "gap": 8,
+          "padding": [
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "cza6s",
+              "name": "Input Field",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "#EDECEA",
+              "cornerRadius": 100,
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "exiUa",
+                  "name": "placeholderText",
+                  "fill": "#9C9B99",
+                  "content": "How are you feeling?",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "nqbvR",
+              "name": "Send Button",
+              "width": 44,
+              "height": 44,
+              "fill": "#3D8A5A",
+              "cornerRadius": 100,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Vhfbx",
+                  "name": "sendIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "send",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xjRr3",
+      "x": 924,
+      "y": 0,
+      "name": "Chat - Get Well Faith",
+      "clip": true,
+      "width": 402,
+      "height": 874,
+      "fill": "#F5F4F1",
+      "cornerRadius": 20,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "NVtkM",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "WicCa",
+              "name": "timeText",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "EPg39",
+          "name": "Header",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "gap": 12,
+          "padding": [
+            12,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "Y8WRo",
+              "name": "backIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-left",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            },
+            {
+              "type": "text",
+              "id": "N0svc",
+              "name": "Cross Icon",
+              "fill": "#D89575",
+              "content": "✝",
+              "fontFamily": "Outfit",
+              "fontSize": 20,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "B9kIb",
+              "name": "Title Area",
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "loLUh",
+                  "name": "titleText",
+                  "fill": "#1A1918",
+                  "content": "Get Well Faith",
+                  "fontFamily": "Outfit",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "YGlfZ",
+                  "name": "subtitleText",
+                  "fill": "#9C9B99",
+                  "content": "Guided by grace",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HULgd",
+              "name": "Spacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "icon_font",
+              "id": "JFelF",
+              "name": "bookIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "book-open",
+              "iconFontFamily": "lucide",
+              "fill": "#D89575"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "INqh7",
+          "name": "Coral Accent Line",
+          "width": "fill_container",
+          "height": 2,
+          "fill": "#D89575"
+        },
+        {
+          "type": "frame",
+          "id": "fox9t",
+          "name": "Chat Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            16,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "UpTWu",
+              "name": "AI Message Row",
+              "gap": 8,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "M86S6",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#FEF0E8",
+                  "cornerRadius": 100,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "uVyoR",
+                      "name": "heartIcon1",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D89575"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HIOCU",
+                  "name": "AI Bubble",
+                  "width": 280,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "jQjWf",
+                      "name": "bubble1Text",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": 248,
+                      "content": "I'm so glad you're here. God sees you, and He cares about every part of your story. What's been on your heart?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "yqhMY",
+                      "name": "bubble1Time",
+                      "fill": "#9C9B99",
+                      "content": "Just now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "MEiWf",
+              "name": "User Message Row",
+              "width": "fill_container",
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OoDIj",
+                  "name": "User Bubble",
+                  "fill": "#D89575",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3jVqm",
+                      "name": "userText",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 240,
+                      "content": "I've been struggling with anxiety and I feel like my faith isn't strong enough.",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Y1UvC",
+                      "name": "userTime",
+                      "fill": "#FEF0E8",
+                      "content": "Now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "a70je",
+              "name": "AI Response with Scripture",
+              "gap": 8,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "wkBHn",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#FEF0E8",
+                  "cornerRadius": 100,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "SJb1Y",
+                      "name": "heartIcon2",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D89575"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rzhe2",
+                  "name": "AI Bubble with Scripture",
+                  "width": 280,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "fm6ea",
+                      "name": "bubble2Text",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": 248,
+                      "content": "Your faith doesn't have to be perfect to be real. God meets us exactly where we are — even in our doubt.",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "eF8Wl",
+                      "name": "Scripture Block",
+                      "fill": "#FEF0E8",
+                      "cornerRadius": 8,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": {
+                          "left": 3
+                        },
+                        "fill": "#D89575"
+                      },
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": [
+                        8,
+                        12
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "9Uk1r",
+                          "name": "scriptureText",
+                          "fill": "#D89575",
+                          "textGrowth": "fixed-width",
+                          "width": 224,
+                          "content": "\"Cast all your anxiety on him because he cares for you.\"",
+                          "fontFamily": "Outfit",
+                          "fontSize": 13,
+                          "fontWeight": "normal",
+                          "fontStyle": "italic"
+                        },
+                        {
+                          "type": "text",
+                          "id": "hUoZo",
+                          "name": "scriptureRef",
+                          "fill": "#D89575",
+                          "content": "— 1 Peter 5:7",
+                          "fontFamily": "Outfit",
+                          "fontSize": 11,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "hLcDL",
+                      "name": "bubble2Time",
+                      "fill": "#9C9B99",
+                      "content": "Just now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "p0T7y",
+              "name": "Prayer Prompt Card",
+              "width": "fill_container",
+              "fill": "#FEF0E8",
+              "cornerRadius": 12,
+              "layout": "vertical",
+              "gap": 6,
+              "padding": [
+                12,
+                16
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "abcyV",
+                  "name": "Prayer Header Row",
+                  "gap": 6,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "HF5dq",
+                      "name": "prayerIcon",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D89575"
+                    },
+                    {
+                      "type": "text",
+                      "id": "eOO1p",
+                      "name": "prayerLabel",
+                      "fill": "#D89575",
+                      "content": "Prayer Prompt",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "FZQp3",
+                  "name": "prayerText",
+                  "fill": "#6D6C6A",
+                  "textGrowth": "fixed-width",
+                  "width": 310,
+                  "content": "Lord, help me release my anxiety into Your hands. Remind me that my worth isn't measured by the strength of my faith, but by Your unending love.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ouUJa",
+          "name": "Input Area",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E4E1"
+          },
+          "gap": 8,
+          "padding": [
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "HfElT",
+              "name": "Input Field",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "#EDECEA",
+              "cornerRadius": 100,
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "d2KOP",
+                  "name": "inputPlaceholder",
+                  "fill": "#9C9B99",
+                  "content": "Share what's on your heart...",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "haZ9Z",
+              "name": "Send Button",
+              "width": 44,
+              "height": 44,
+              "fill": "#D89575",
+              "cornerRadius": 100,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "AhkBo",
+                  "name": "sendIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "send",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "2a0dg",
+      "x": 1386,
+      "y": 0,
+      "name": "Crisis Resources",
+      "clip": true,
+      "width": 402,
+      "height": 874,
+      "fill": "#F5F4F1",
+      "cornerRadius": 20,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Ueohs",
+          "name": "statusBar",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "MY3bK",
+              "name": "timeText",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "4p23r",
+          "name": "header",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "gap": 12,
+          "padding": [
+            12,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "V7vJE",
+              "name": "backIcon",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-left",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            },
+            {
+              "type": "text",
+              "id": "q2eNw",
+              "name": "headerTitle",
+              "fill": "#1A1918",
+              "content": "Crisis Resources",
+              "fontFamily": "Outfit",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "jR1SX",
+              "name": "spacer",
+              "width": "fill_container",
+              "height": 1
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "2mCbW",
+          "name": "contentWrap",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "6kc9O",
+              "name": "introCard",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "3ZMIg",
+                  "name": "heartIcon",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "heart-handshake",
+                  "iconFontFamily": "lucide",
+                  "fill": "#D08068"
+                },
+                {
+                  "type": "text",
+                  "id": "HTUbX",
+                  "name": "introTitle",
+                  "fill": "#1A1918",
+                  "content": "You're not alone",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "R51x3",
+                  "name": "introDesc",
+                  "fill": "#6D6C6A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "If you're in crisis, please reach out. These resources are free, confidential, and available 24/7.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "v2jfI",
+              "name": "card1",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "gap": 12,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RzfId",
+                  "name": "icon1Circle",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "olxwl",
+                      "name": "icon1",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "phone",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "NliDD",
+                  "name": "info1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Njwm6",
+                      "name": "info1Title",
+                      "fill": "#1A1918",
+                      "content": "988 Suicide & Crisis Lifeline",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5bQt9",
+                      "name": "info1Sub",
+                      "fill": "#6D6C6A",
+                      "content": "Call or text 988",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "U521D",
+                  "name": "btn1",
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 100,
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Eagp5",
+                      "name": "btn1Text",
+                      "fill": "#FFFFFF",
+                      "content": "Call",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "wvQZj",
+              "name": "card2",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "gap": 12,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "YXpT7",
+                  "name": "ic2Circle",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "IXHne",
+                      "name": "ic2",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "message-circle",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "0J4HX",
+                  "name": "info2",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zGYhk",
+                      "name": "info2T",
+                      "fill": "#1A1918",
+                      "content": "Crisis Text Line",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tcK8c",
+                      "name": "info2S",
+                      "fill": "#6D6C6A",
+                      "content": "Text HOME to 741741",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "dfKZ0",
+                  "name": "btn2",
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 100,
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "wvyeY",
+                      "name": "btn2T",
+                      "fill": "#FFFFFF",
+                      "content": "Text",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KmFSc",
+              "name": "card3",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "gap": 12,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "0BS87",
+                  "name": "ic3Circle",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Q3drI",
+                      "name": "ic3",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "phone",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Au6km",
+                  "name": "info3",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "JI1h0",
+                      "name": "info3T",
+                      "fill": "#1A1918",
+                      "content": "SAMHSA Helpline",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "D3H42",
+                      "name": "info3S",
+                      "fill": "#6D6C6A",
+                      "content": "1-800-662-4357",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GKshL",
+                  "name": "btn3",
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 100,
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3GN4e",
+                      "name": "btn3T",
+                      "fill": "#FFFFFF",
+                      "content": "Call",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ua5B0",
+              "name": "card4",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "gap": 12,
+              "padding": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "U8zKz",
+                  "name": "ic4Circle",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ei4cb",
+                      "name": "ic4",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pE2No",
+                  "name": "info4",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 2,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WauKk",
+                      "name": "info4T",
+                      "fill": "#1A1918",
+                      "content": "Trevor Project",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5eqCU",
+                      "name": "info4S",
+                      "fill": "#6D6C6A",
+                      "content": "1-866-488-7386 (LGBTQ+)",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "q6vPh",
+                  "name": "btn4",
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 100,
+                  "padding": [
+                    8,
+                    16
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "lpAW2",
+                      "name": "btn4T",
+                      "fill": "#FFFFFF",
+                      "content": "Call",
+                      "fontFamily": "Outfit",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "fJEOJ",
+              "name": "footer",
+              "fill": "#9C9B99",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Reaching out is a sign of strength, not weakness.",
+              "textAlign": "center",
+              "fontFamily": "Outfit",
+              "fontSize": 13,
+              "fontWeight": "normal",
+              "fontStyle": "italic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Xoc4y",
+      "x": 1848,
+      "y": 0,
+      "name": "Donation",
+      "clip": true,
+      "width": 402,
+      "height": 874,
+      "fill": "#F5F4F1",
+      "cornerRadius": 20,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "WmwM8",
+          "name": "sb2",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "2DsCA",
+              "name": "tt2",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "XminG",
+          "name": "hd2",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "gap": 12,
+          "padding": [
+            12,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "EvTGR",
+              "name": "bk2",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-left",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            },
+            {
+              "type": "text",
+              "id": "qHLK4",
+              "name": "ht2",
+              "fill": "#1A1918",
+              "content": "Support Get Well",
+              "fontFamily": "Outfit",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "1v0Hk",
+              "name": "sp2",
+              "width": "fill_container",
+              "height": 1
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "OEilJ",
+          "name": "cw2",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "61HU1",
+              "name": "mCard",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "cBW5A",
+                  "name": "mIcon",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "heart",
+                  "iconFontFamily": "lucide",
+                  "fill": "#3D8A5A"
+                },
+                {
+                  "type": "text",
+                  "id": "MhWoi",
+                  "name": "mTitle",
+                  "fill": "#1A1918",
+                  "content": "Keep Get Well Free",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "tUadT",
+                  "name": "mDesc",
+                  "fill": "#6D6C6A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Your donation ensures that 24/7 emotional support stays free and accessible for everyone who needs it. Get Well is a registered 501(c)(3) nonprofit.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uKwLj",
+              "name": "amtSection",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "w42T9",
+                  "name": "amtLabel",
+                  "fill": "#1A1918",
+                  "content": "Choose an amount",
+                  "fontFamily": "Outfit",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "zzvuo",
+                  "name": "row1",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QZYXK",
+                      "name": "a5",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E4E1"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ECr9l",
+                          "name": "a5t",
+                          "fill": "#1A1918",
+                          "content": "$5",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "nJyV3",
+                      "name": "a10",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E4E1"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "qHN7P",
+                          "name": "a10t",
+                          "fill": "#1A1918",
+                          "content": "$10",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "zpngZ",
+                      "name": "a25",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "#3D8A5A",
+                      "cornerRadius": 12,
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Nf9D6",
+                          "name": "a25t",
+                          "fill": "#FFFFFF",
+                          "content": "$25",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qiJYd",
+                  "name": "row2",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Pn5WU",
+                      "name": "a50",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E4E1"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "7cgse",
+                          "name": "a50t",
+                          "fill": "#1A1918",
+                          "content": "$50",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "963tP",
+                      "name": "a100",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E4E1"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "eeJlg",
+                          "name": "a100t",
+                          "fill": "#1A1918",
+                          "content": "$100",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IACW8",
+                      "name": "aCust",
+                      "width": "fill_container",
+                      "height": 52,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 12,
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#E5E4E1"
+                      },
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "JvILk",
+                          "name": "aCustT",
+                          "fill": "#1A1918",
+                          "content": "Custom",
+                          "fontFamily": "Outfit",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "xytIN",
+              "name": "donateBtn",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "#3D8A5A",
+              "cornerRadius": 100,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "y7b0G",
+                  "name": "donateTxt",
+                  "fill": "#FFFFFF",
+                  "content": "Donate $25",
+                  "fontFamily": "Outfit",
+                  "fontSize": 16,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "3BK20",
+              "name": "trustRow",
+              "width": "fill_container",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KFcyb",
+                  "name": "tb1",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "jit7S",
+                      "name": "tb1i",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "shield",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9C9B99"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dihHB",
+                      "name": "tb1t",
+                      "fill": "#9C9B99",
+                      "content": "Secure",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vjdmp",
+                  "name": "tb2",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "UxiM6",
+                      "name": "tb2i",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "lock",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9C9B99"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Xwkg3",
+                      "name": "tb2t",
+                      "fill": "#9C9B99",
+                      "content": "Encrypted",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "mdrVS",
+                  "name": "tb3",
+                  "gap": 4,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "VwR77",
+                      "name": "tb3i",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9C9B99"
+                    },
+                    {
+                      "type": "text",
+                      "id": "GTv13",
+                      "name": "tb3t",
+                      "fill": "#9C9B99",
+                      "content": "501(c)(3)",
+                      "fontFamily": "Outfit",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "tIM6B",
+              "name": "footerTxt",
+              "fill": "#9C9B99",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Every dollar goes directly to keeping Get Well free.",
+              "textAlign": "center",
+              "fontFamily": "Outfit",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "6yGJS",
+      "x": 2310,
+      "y": 0,
+      "name": "Settings / About",
+      "clip": true,
+      "width": 402,
+      "height": 874,
+      "fill": "#F5F4F1",
+      "cornerRadius": 20,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "zIWBP",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "HIool",
+              "name": "timeText1",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "cShjm",
+          "name": "Header",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "gap": 12,
+          "padding": [
+            12,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "Tg2U0",
+              "name": "backChev1",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-left",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            },
+            {
+              "type": "text",
+              "id": "7tVzE",
+              "name": "headerTitle1",
+              "fill": "#1A1918",
+              "content": "Settings",
+              "fontFamily": "Outfit",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "lnzab",
+              "name": "Spacer",
+              "width": "fill_container",
+              "height": 1
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "rRiuD",
+          "name": "Content Wrapper",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "ddFce",
+              "name": "About Card",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 12,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Fx87r",
+                  "name": "aboutTitle",
+                  "fill": "#1A1918",
+                  "content": "Get Well",
+                  "fontFamily": "Outfit",
+                  "fontSize": 22,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "ltbeB",
+                  "name": "aboutDesc",
+                  "fill": "#6D6C6A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "A free, anonymous, 24/7 AI emotional support app. Structured as a 501(c)(3) nonprofit. Always free. No paywalls. No subscriptions. Ever.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "VbpsN",
+                  "name": "aboutLink",
+                  "fill": "#3D8A5A",
+                  "content": "getwell.help",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IWqFX",
+              "name": "Privacy Card",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BhVk2",
+                  "name": "Privacy Header",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "fWzrr",
+                      "name": "privIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "shield",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cpa7E",
+                      "name": "privTitle",
+                      "fill": "#1A1918",
+                      "content": "Your Privacy",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "VWoeY",
+                  "name": "privDesc",
+                  "fill": "#6D6C6A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Get Well does not create accounts, collect personal data, or store conversations. Every session is completely anonymous.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uaBCq",
+              "name": "Navigation Links",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "1PFFP",
+                  "name": "Nav Row 1",
+                  "width": "fill_container",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E4E1"
+                  },
+                  "gap": 12,
+                  "padding": [
+                    16,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "OH6hZ",
+                      "name": "nav1Icon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "IDX1q",
+                      "name": "nav1Text",
+                      "fill": "#1A1918",
+                      "content": "Switch Mode",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "bmNBD",
+                      "name": "nav1Spacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "3dG8g",
+                      "name": "nav1Chev",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9C9B99"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GUERb",
+                  "name": "Nav Row 2",
+                  "width": "fill_container",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E4E1"
+                  },
+                  "gap": 12,
+                  "padding": [
+                    16,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "UEV3g",
+                      "name": "nav2Icon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "triangle-alert",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D08068"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Pqk2l",
+                      "name": "nav2Text",
+                      "fill": "#1A1918",
+                      "content": "Crisis Resources",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "colri",
+                      "name": "nav2Spacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "kKwYu",
+                      "name": "nav2Chev",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9C9B99"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "2XhTQ",
+                  "name": "Nav Row 3",
+                  "width": "fill_container",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "bottom": 1
+                    },
+                    "fill": "#E5E4E1"
+                  },
+                  "gap": 12,
+                  "padding": [
+                    16,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "EadPZ",
+                      "name": "nav3Icon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "gift",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5Y31D",
+                      "name": "nav3Text",
+                      "fill": "#1A1918",
+                      "content": "Support Get Well",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "jCdKj",
+                      "name": "nav3Spacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "462wJ",
+                      "name": "nav3Chev",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9C9B99"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "aKgBH",
+                  "name": "Nav Row 4",
+                  "width": "fill_container",
+                  "gap": 12,
+                  "padding": [
+                    16,
+                    20
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "mzMrN",
+                      "name": "nav4Icon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "info",
+                      "iconFontFamily": "lucide",
+                      "fill": "#6D6C6A"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ooKdc",
+                      "name": "nav4Text",
+                      "fill": "#1A1918",
+                      "content": "Terms & Privacy Policy",
+                      "fontFamily": "Outfit",
+                      "fontSize": 15,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "DrODT",
+                      "name": "nav4Spacer",
+                      "width": "fill_container",
+                      "height": 1
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "frXkr",
+                      "name": "nav4Chev",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "chevron-right",
+                      "iconFontFamily": "lucide",
+                      "fill": "#9C9B99"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "mYAUh",
+              "name": "footerText",
+              "fill": "#9C9B99",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Made with love for those who need it most.",
+              "textAlign": "center",
+              "fontFamily": "Outfit",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "gd9pe",
+              "name": "versionText",
+              "fill": "#9C9B99",
+              "textGrowth": "fixed-width",
+              "width": "fill_container",
+              "content": "Version 1.0.0",
+              "textAlign": "center",
+              "fontFamily": "Outfit",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "bcPeU",
+      "x": 2772,
+      "y": 0,
+      "name": "Chat - Crisis Banner",
+      "clip": true,
+      "width": 402,
+      "height": 874,
+      "fill": "#F5F4F1",
+      "cornerRadius": 20,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "xuMaj",
+          "name": "Status Bar",
+          "width": "fill_container",
+          "height": 62,
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "yvdli",
+              "name": "timeText2",
+              "fill": "#1A1918",
+              "content": "9:41",
+              "fontFamily": "Outfit",
+              "fontSize": 15,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "EGZoO",
+          "name": "Header",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "gap": 12,
+          "padding": [
+            12,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "CEliu",
+              "name": "backChev2",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "chevron-left",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            },
+            {
+              "type": "frame",
+              "id": "BBQ8w",
+              "name": "Title Area",
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "e5BWI",
+                  "name": "titleText2",
+                  "fill": "#1A1918",
+                  "content": "Get Well",
+                  "fontFamily": "Outfit",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "XlSeT",
+                  "name": "subtitleText2",
+                  "fill": "#9C9B99",
+                  "content": "Here for you, always",
+                  "fontFamily": "Outfit",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "KDtvq",
+              "name": "Spacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "icon_font",
+              "id": "nuM6c",
+              "name": "moreIcon2",
+              "width": 20,
+              "height": 20,
+              "iconFontName": "ellipsis-vertical",
+              "iconFontFamily": "lucide",
+              "fill": "#6D6C6A"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "T2Sv7",
+          "name": "Green Accent Line",
+          "width": "fill_container",
+          "height": 2,
+          "fill": "#3D8A5A"
+        },
+        {
+          "type": "frame",
+          "id": "aPuOG",
+          "name": "Chat Area",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            16,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "3VwOb",
+              "name": "AI Message Row 1",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "8rrYp",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 100,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "otYe9",
+                      "name": "avatarIcon1",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "s5hvw",
+                  "name": "AI Bubble",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000000D",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 3
+                  },
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qxhXd",
+                      "name": "aiText1",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": 248,
+                      "content": "Hey there. I'm glad you're here. What's going on?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tHABS",
+                      "name": "aiTime1",
+                      "fill": "#9C9B99",
+                      "content": "Just now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TPzHD",
+              "name": "User Message Row",
+              "width": "fill_container",
+              "justifyContent": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KznCR",
+                  "name": "User Bubble",
+                  "fill": "#3D8A5A",
+                  "cornerRadius": 16,
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OCAyT",
+                      "name": "userText",
+                      "fill": "#FFFFFF",
+                      "textGrowth": "fixed-width",
+                      "width": 240,
+                      "content": "I just don't want to be here anymore. Nothing feels worth it.",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "w4TTm",
+                      "name": "userTime",
+                      "fill": "#C8F0D8",
+                      "content": "Now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aQfev",
+              "name": "Crisis Banner",
+              "width": "fill_container",
+              "fill": "#FFFFFF",
+              "cornerRadius": 16,
+              "stroke": {
+                "align": "inside",
+                "thickness": 2,
+                "fill": "#D08068"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A191808",
+                "offset": {
+                  "x": 0,
+                  "y": 2
+                },
+                "blur": 12
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Sivv2",
+                  "name": "Banner Header",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "2IRh0",
+                      "name": "bannerIcon",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontName": "triangle-alert",
+                      "iconFontFamily": "lucide",
+                      "fill": "#D08068"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ySMVd",
+                      "name": "bannerTitle",
+                      "fill": "#D08068",
+                      "content": "You're not alone",
+                      "fontFamily": "Outfit",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "CB8fO",
+                  "name": "bannerDesc",
+                  "fill": "#6D6C6A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "It sounds like you're going through something really heavy. Please know that support is available right now.",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "fv1p1",
+                  "name": "Call Button",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "#D08068",
+                  "cornerRadius": 100,
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "QTse5",
+                      "name": "callIcon",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "phone",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lGPvR",
+                      "name": "callText",
+                      "fill": "#FFFFFF",
+                      "content": "Call 988 Lifeline",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bsrfU",
+                  "name": "Text Button",
+                  "width": "fill_container",
+                  "height": 44,
+                  "cornerRadius": 100,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#D08068"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "EyF3f",
+                      "name": "textBtnLabel",
+                      "fill": "#D08068",
+                      "content": "Text HOME to 741741",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "BAPNo",
+                  "name": "crisisLink",
+                  "fill": "#3D8A5A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "View all crisis resources",
+                  "textAlign": "center",
+                  "fontFamily": "Outfit",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "4JhNb",
+              "name": "AI Message Row 2",
+              "width": "fill_container",
+              "gap": 8,
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "BGhqf",
+                  "name": "Avatar",
+                  "width": 36,
+                  "height": 36,
+                  "fill": "#C8F0D8",
+                  "cornerRadius": 100,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "eGCgJ",
+                      "name": "avatarIcon2",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "heart",
+                      "iconFontFamily": "lucide",
+                      "fill": "#3D8A5A"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "bDBSB",
+                  "name": "AI Bubble",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 16,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#0000000D",
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "blur": 3
+                  },
+                  "layout": "vertical",
+                  "gap": 4,
+                  "padding": [
+                    12,
+                    16
+                  ],
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "SnrvD",
+                      "name": "aiText2",
+                      "fill": "#1A1918",
+                      "textGrowth": "fixed-width",
+                      "width": 248,
+                      "content": "I hear you, and I'm really glad you told me. Your feelings matter. Would it be okay if we talked through what's been making things feel so heavy?",
+                      "fontFamily": "Outfit",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "53c1v",
+                      "name": "aiTime2",
+                      "fill": "#9C9B99",
+                      "content": "Just now",
+                      "fontFamily": "Outfit",
+                      "fontSize": 11,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Jrf6v",
+          "name": "Input Area",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "top": 1
+            },
+            "fill": "#E5E4E1"
+          },
+          "gap": 8,
+          "padding": [
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "DcUHi",
+              "name": "Input Field",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "#EDECEA",
+              "cornerRadius": 100,
+              "padding": [
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aw9mB",
+                  "name": "inputPlaceholder",
+                  "fill": "#9C9B99",
+                  "content": "How are you feeling?",
+                  "fontFamily": "Outfit",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "mVksc",
+              "name": "Send Button",
+              "width": 44,
+              "height": 44,
+              "fill": "#3D8A5A",
+              "cornerRadius": 100,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "qoJJ8",
+                  "name": "sendIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "send",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
