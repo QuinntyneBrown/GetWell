@@ -1,0 +1,138 @@
+@startuml
+scale max 1024 width
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam defaultFontSize 11
+skinparam packageStyle rectangle
+hide empty methods
+
+title Chat Interface - Get Well Mode: Class Diagram
+
+package "Mobile App - Components" <<Rectangle>> {
+  class ChatScreen {
+    - state: ChatState
+    - dispatch: Dispatch<ChatAction>
+    - chatService: ChatService
+    + handleSendMessage(text: string): void
+    + handleBackPress(): void
+    + handleMorePress(): void
+  }
+
+  class ChatHeader {
+    + title: string
+    + subtitle: string
+    + onBackPress(): void
+    + onMorePress(): void
+  }
+
+  class ChatArea {
+    + messages: Message[]
+    + isTyping: boolean
+  }
+
+  class MessageBubble {
+    + message: Message
+  }
+
+  class AvatarIcon {
+    + size: number
+  }
+
+  class ChatInput {
+    - inputText: string
+    + onSendMessage(text: string): void
+    + disabled: boolean
+  }
+
+  class TypingIndicator {
+  }
+}
+
+package "Mobile App - Types" <<Rectangle>> {
+  interface Message {
+    + id: string
+    + sessionId: string
+    + sender: "user" | "ai"
+    + text: string
+    + timestamp: number
+  }
+
+  interface ChatSession {
+    + sessionId: string
+    + mode: "getwell" | "getwell-faith"
+    + createdAt: number
+  }
+
+  interface ChatState {
+    + session: ChatSession | null
+    + messages: Message[]
+    + isTyping: boolean
+    + error: string | null
+  }
+
+  interface SendMessageRequest {
+    + sessionId: string
+    + mode: string
+    + message: string
+  }
+
+  interface SendMessageResponse {
+    + messageId: string
+    + text: string
+    + timestamp: number
+    + isCrisis: boolean
+  }
+}
+
+package "Mobile App - Services" <<Rectangle>> {
+  class ChatService {
+    - baseUrl: string
+    + sendMessage(req: SendMessageRequest): Promise<SendMessageResponse>
+  }
+
+  class SessionManager {
+    + {static} createSession(mode: string): ChatSession
+    + {static} destroySession(sessionId: string): void
+  }
+}
+
+package "Backend (Express)" <<Rectangle>> {
+  class ChatController {
+    - conversationStore: ConversationStore
+    - claudeService: ClaudeService
+    + handleChat(req, res): void
+  }
+
+  class ClaudeService {
+    - client: Anthropic
+    + generateResponse(history, mode): Promise<string>
+  }
+
+  class ConversationStore {
+    - store: Map<string, ConversationEntry>
+    + getHistory(sessionId): ConversationEntry
+    + addExchange(sessionId, user, ai): void
+    + evictExpired(): void
+  }
+}
+
+' Relationships
+ChatScreen --> ChatHeader
+ChatScreen --> ChatArea
+ChatScreen --> ChatInput
+ChatScreen --> ChatService
+ChatScreen --> SessionManager
+ChatScreen ..> ChatState : uses
+
+ChatArea --> MessageBubble
+ChatArea --> TypingIndicator
+MessageBubble --> AvatarIcon : AI variant
+
+ChatService ..> SendMessageRequest : sends
+ChatService ..> SendMessageResponse : receives
+MessageBubble ..> Message : renders
+
+ChatController --> ClaudeService
+ChatController --> ConversationStore
+
+@enduml

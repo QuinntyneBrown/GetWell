@@ -333,3 +333,19 @@ src/
 └── constants/
     └── modeConfig.ts           # MODE_CONFIGS array
 ```
+
+---
+
+## Diagrams
+
+### Class Diagram
+
+![Class Diagram](diagrams/class-diagram.png)
+
+### Sequence Diagram
+
+![Sequence Diagram](diagrams/sequence-diagram.png)
+
+### C4 Component Diagram
+
+![C4 Component Diagram](diagrams/c4-component.png)

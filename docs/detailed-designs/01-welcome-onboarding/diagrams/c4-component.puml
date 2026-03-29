@@ -1,0 +1,43 @@
+@startuml c4-component
+scale max 1024 width
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_LEFT_RIGHT()
+
+title Component Diagram - Welcome / Onboarding Screen
+
+Person(user, "User", "A person seeking anonymous emotional support")
+
+System_Boundary(mobileApp, "Get Well Mobile App") {
+
+  Container_Boundary(welcomeFeature, "Welcome Feature") {
+    Component(welcomeScreen, "WelcomeScreen", "React Native Screen", "Root screen: renders branding, mode selection, and privacy banner")
+    Component(logoSection, "LogoSection", "React Component", "Displays logo circle, app title, and tagline")
+    Component(missionText, "MissionText", "React Component", "Shows mission statement paragraph")
+    Component(modeSelector, "ModeSelector", "React Component", "Renders section label and two ModeCard components")
+    Component(modeCard, "ModeCard", "React Component", "Pressable card with icon, title, and description for a support mode")
+    Component(privacyBanner, "PrivacyBanner", "React Component", "Shield icon and privacy assurance text")
+  }
+
+  Container_Boundary(navigation, "Navigation") {
+    Component(stackNav, "StackNavigator", "React Navigation", "Manages screen stack and transitions between Welcome, Chat, and other screens")
+  }
+
+  Container_Boundary(chatFeature, "Chat Feature") {
+    Component(chatScreen, "ChatScreen", "React Native Screen", "AI-powered emotional support chat interface")
+  }
+}
+
+Rel(user, welcomeScreen, "Opens app, views welcome screen")
+Rel(welcomeScreen, logoSection, "Renders")
+Rel(welcomeScreen, missionText, "Renders")
+Rel(welcomeScreen, modeSelector, "Renders")
+Rel(modeSelector, modeCard, "Contains 2 instances")
+Rel(welcomeScreen, privacyBanner, "Renders")
+Rel(modeCard, stackNav, "onSelect triggers navigate()")
+Rel(stackNav, chatScreen, "Navigates to Chat with mode param")
+Rel(user, modeCard, "Taps to select mode")
+
+@enduml

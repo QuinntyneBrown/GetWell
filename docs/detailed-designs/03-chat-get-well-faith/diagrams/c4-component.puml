@@ -1,0 +1,54 @@
+@startuml
+scale max 1024 width
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Get Well Faith — C4 Component Diagram
+
+Container_Boundary(mobile, "Mobile App (React Native / Expo)") {
+
+  Component(faithScreen, "FaithChatScreen", "React Native Screen", "Top-level screen composing faith chat header, chat area, and input")
+  Component(faithHeader, "FaithChatHeader", "React Component", "Cross icon, 'Get Well Faith' title, 'Guided by grace' subtitle, coral accent")
+  Component(faithBubble, "FaithMessageBubble", "React Component", "Renders AI/user bubbles with optional ScriptureBlock and PrayerPromptCard")
+  Component(scriptureBlock, "ScriptureBlock", "React Component", "Styled scripture reference block with coral left border and italic text")
+  Component(prayerCard, "PrayerPromptCard", "React Component", "Full-width prayer prompt card with heart icon and prayer text")
+  Component(chatArea, "ChatArea", "Shared Component", "Scrollable message list, shared with Get Well mode")
+  Component(chatInput, "ChatInput", "Shared Component", "Text input and send button, re-themed with coral accent")
+  Component(chatContext, "ChatContext", "React Context + useReducer", "Shared state management for messages, loading, errors")
+  Component(faithService, "FaithChatService", "TypeScript Service", "Sends messages with mode='faith' to API server")
+
+  Rel(faithScreen, faithHeader, "Renders")
+  Rel(faithScreen, chatArea, "Renders")
+  Rel(faithScreen, chatInput, "Renders")
+  Rel(chatArea, faithBubble, "Renders per message")
+  Rel(faithBubble, scriptureBlock, "Renders if scripture present")
+  Rel(faithBubble, prayerCard, "Renders if prayer present")
+  Rel(faithScreen, chatContext, "Reads/dispatches state")
+  Rel(faithScreen, faithService, "Sends messages via")
+}
+
+Container_Boundary(api, "API Server (Node.js + Express)") {
+
+  Component(chatController, "ChatController", "Express Route Handler", "POST /api/chat — routes to correct prompt based on mode")
+  Component(promptConfig, "FaithSystemPromptConfig", "Configuration", "Faith-specific system prompt instructing Claude to include scripture and prayer markers")
+  Component(responseParser, "FaithResponseParser", "TypeScript Module", "Extracts [SCRIPTURE] and [PRAYER] markers, returns structured FaithMessage")
+  Component(claudeService, "ClaudeService", "TypeScript Service", "Sends messages to Claude API with selected system prompt")
+  Component(sessionManager, "SessionManager", "TypeScript Service", "Anonymous session creation and management")
+
+  Rel(chatController, promptConfig, "Selects prompt for mode='faith'")
+  Rel(chatController, claudeService, "Forwards conversation")
+  Rel(chatController, responseParser, "Parses raw response")
+  Rel(chatController, sessionManager, "Validates session")
+}
+
+Container_Boundary(external, "External Services") {
+
+  Component_Ext(claudeApi, "Claude API", "Anthropic", "Generates faith-based responses with scripture and prayer content")
+}
+
+Rel(faithService, chatController, "POST /api/chat", "HTTPS/JSON")
+Rel(claudeService, claudeApi, "messages.create()", "HTTPS")
+
+@enduml

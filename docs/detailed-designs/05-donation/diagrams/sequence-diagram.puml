@@ -1,0 +1,62 @@
+@startuml
+scale max 1024 width
+skinparam shadowing false
+skinparam defaultFontName Outfit
+skinparam sequenceMessageAlign center
+
+title Donation Screen — Sequence Diagram
+
+actor User
+participant "DonationScreen" as Screen
+participant "DonationService" as Service
+participant "API Server\n(DonationController)" as API
+participant "StripeService" as StripeSvc
+participant "Stripe API" as Stripe
+participant "Stripe\nPaymentSheet" as Sheet
+
+== Amount Selection ==
+
+User -> Screen : Selects $25 (or preset/custom)
+Screen -> Screen : dispatch(SELECT_PRESET, 25)\nUpdate CTA label
+
+== Payment Flow ==
+
+User -> Screen : Taps "Donate $25"
+Screen -> Screen : dispatch(SET_PAYMENT_STATUS, 'creating')
+
+Screen -> Service : createPaymentIntent(2500)
+Service -> API : POST /api/donations/create-payment-intent\n{ amount: 2500 }
+API -> API : Validate amount >= 100 cents
+API -> StripeSvc : createPaymentIntent(2500)
+StripeSvc -> Stripe : stripe.paymentIntents.create(\n  amount: 2500, currency: 'usd')
+Stripe --> StripeSvc : PaymentIntent object
+StripeSvc --> API : PaymentIntent
+API --> Service : { clientSecret, paymentIntentId }
+Service --> Screen : PaymentIntentResponse
+
+Screen -> Sheet : initPaymentSheet({ clientSecret })
+Sheet --> Screen : { error: null }
+
+Screen -> Screen : dispatch(SET_PAYMENT_STATUS, 'presenting')
+Screen -> Sheet : presentPaymentSheet()
+
+Sheet -> User : Card entry UI
+User -> Sheet : Enters card & confirms
+
+Sheet -> Stripe : Process payment
+Stripe --> Sheet : Payment result
+
+alt Success
+  Sheet --> Screen : { error: null }
+  Screen -> Screen : dispatch(SET_PAYMENT_STATUS, 'success')
+  Screen -> User : Show success confirmation
+else Payment Declined
+  Sheet --> Screen : { error: { code, message } }
+  Screen -> Screen : dispatch(SET_ERROR, message)
+  Screen -> User : Show error message
+else User Cancels
+  Sheet --> Screen : { error: { code: 'Canceled' } }
+  Screen -> Screen : dispatch(SET_PAYMENT_STATUS, 'idle')
+end
+
+@enduml

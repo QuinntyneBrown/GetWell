@@ -1,0 +1,66 @@
+@startuml
+scale max 1024 width
+skinparam shadowing false
+skinparam defaultFontSize 11
+skinparam sequenceMessageAlign center
+
+title Chat Interface - Get Well Mode: Message Flow
+
+actor User
+participant "ChatInput" as Input
+participant "ChatScreen" as Screen
+participant "ChatService" as Service
+participant "Express\nChatController" as Controller
+participant "ConversationStore" as Store
+participant "ClaudeService" as Claude
+participant "Claude API\n(Anthropic)" as API
+
+== Session Initialization ==
+
+User -> Screen : Opens Get Well chat
+Screen -> Screen : SessionManager.createSession()
+Screen -> Screen : dispatch(SESSION_CREATED)
+Screen -> Screen : dispatch(ADD_MESSAGE)\n[AI greeting]
+
+== Send Message ==
+
+User -> Input : Types message
+User -> Input : Taps Send
+Input -> Screen : onSendMessage(text)
+
+Screen -> Screen : dispatch(ADD_MESSAGE)\n{sender: "user", text}
+Screen -> Screen : dispatch(SET_TYPING, true)
+
+Screen -> Service : sendMessage(\n  {sessionId, mode, message})
+Service -> Controller : POST /api/chat\n{sessionId, mode, message}
+
+Controller -> Store : getHistory(sessionId)
+Store --> Controller : conversationHistory[]
+
+Controller -> Claude : generateResponse(\n  history, "getwell")
+Claude -> API : messages.create(\n  system: empathy prompt,\n  messages: history)
+API --> Claude : AI response text
+Claude --> Controller : responseText
+
+Controller -> Controller : Check crisis signals
+Controller -> Store : addExchange(\n  sessionId, message, response)
+Controller --> Service : {messageId, text,\n  timestamp, isCrisis}
+
+Service --> Screen : SendMessageResponse
+
+Screen -> Screen : dispatch(SET_TYPING, false)
+Screen -> Screen : dispatch(ADD_MESSAGE)\n{sender: "ai", text}
+
+Screen --> User : AI message bubble\nappears in chat
+
+== Error Handling ==
+
+User -> Input : Taps Send
+Input -> Screen : onSendMessage(text)
+Screen -> Service : sendMessage(...)
+Service --> Screen : NetworkError / 500
+
+Screen -> Screen : dispatch(SET_ERROR,\n  "Something went wrong")
+Screen --> User : Error banner\nwith retry button
+
+@enduml

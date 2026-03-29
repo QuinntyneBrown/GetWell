@@ -1,0 +1,49 @@
+@startuml
+scale max 1024 width
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Crisis Detection & Resource Referral — C4 Component Diagram
+
+Person(user, "User", "A person seeking emotional support through the Get Well app")
+
+System_Boundary(mobile, "Mobile App (React Native / Expo)") {
+  Component(chatScreen, "ChatScreen", "React Native Screen", "Displays conversation thread with user and AI messages")
+  Component(crisisBanner, "CrisisBanner", "React Component", "Inline card with crisis hotline call/text buttons, shown when crisis detected")
+  Component(crisisResourcesScreen, "CrisisResourcesScreen", "React Native Screen", "Dedicated screen listing all crisis resources with direct actions")
+  Component(chatContext, "Chat Context", "React Context + useReducer", "Manages chat state including crisis detection flags and level")
+  Component(deepLinkHandler, "Deep Link Handler", "React Native Linking", "Opens tel: and sms: URLs to trigger phone calls and SMS")
+}
+
+System_Boundary(server, "API Server (Node.js / Express)") {
+  Component(chatController, "Chat Controller", "Express Router", "Handles POST /api/chat, orchestrates crisis detection and AI response")
+  Component(crisisDetectionService, "CrisisDetectionService", "TypeScript Service", "Orchestrates keyword matching and Claude analysis for crisis signals")
+  Component(keywordMatcher, "KeywordMatcher", "TypeScript Module", "Fast synchronous keyword/phrase matching against curated crisis term lists")
+  Component(crisisAnalyzer, "CrisisAnalyzer", "TypeScript Module", "Uses Claude API to detect implicit crisis signals via structured prompt")
+  Component(claudeService, "Claude Chat Service", "TypeScript Service", "Generates empathetic AI chat responses via Claude API")
+}
+
+System_Ext(claudeApi, "Claude API", "Anthropic's Claude language model for crisis analysis and chat responses")
+System_Ext(phoneOs, "Phone / SMS", "Device OS handles tel: and sms: URL schemes for calls and texts")
+
+Rel(user, chatScreen, "Sends messages, views responses")
+Rel(chatScreen, crisisBanner, "Renders when crisis detected")
+Rel(crisisBanner, crisisResourcesScreen, "View all crisis resources")
+Rel(crisisBanner, deepLinkHandler, "Call / Text button tap")
+Rel(crisisResourcesScreen, deepLinkHandler, "Resource action button tap")
+Rel(deepLinkHandler, phoneOs, "tel: / sms: URL schemes")
+Rel(chatScreen, chatContext, "Reads and dispatches crisis state")
+Rel(chatScreen, chatController, "POST /api/chat", "HTTPS/JSON")
+
+Rel(chatController, crisisDetectionService, "Analyzes message for crisis signals")
+Rel(crisisDetectionService, keywordMatcher, "Fast keyword check")
+Rel(crisisDetectionService, crisisAnalyzer, "Deep analysis for implicit signals")
+Rel(crisisAnalyzer, claudeApi, "Crisis assessment prompt", "HTTPS/JSON")
+Rel(chatController, claudeService, "Generates AI chat response")
+Rel(claudeService, claudeApi, "Chat completion request", "HTTPS/JSON")
+
+Rel(user, crisisResourcesScreen, "Views resources, taps actions")
+
+@enduml

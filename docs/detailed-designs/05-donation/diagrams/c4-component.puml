@@ -1,0 +1,32 @@
+@startuml
+scale max 1024 width
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Donation Screen — C4 Component Diagram
+
+Person(user, "App User", "Supporter who wants to donate to Get Well")
+
+System_Boundary(mobile, "Mobile App (React Native / Expo)") {
+  Component(donationScreen, "Donation Screen", "React Native Screen", "Displays mission card, amount selector, donate CTA, and trust badges")
+  Component(stripeSDK, "Stripe React Native SDK", "@stripe/stripe-react-native", "Presents PaymentSheet for secure card entry; handles PCI-compliant tokenization")
+  Component(donationService, "DonationService", "TypeScript Module", "Client-side service that calls the API to create PaymentIntents")
+}
+
+System_Boundary(server, "API Server (Node.js / Express)") {
+  Component(donationController, "DonationController", "Express Controller", "Validates donation amount and orchestrates PaymentIntent creation")
+  Component(stripeService, "StripeService", "TypeScript Module", "Wraps the Stripe Node.js SDK to create and retrieve PaymentIntents")
+}
+
+System_Ext(stripeAPI, "Stripe API", "Handles payment processing, card tokenization, and PCI compliance")
+
+Rel(user, donationScreen, "Selects amount, taps Donate")
+Rel(donationScreen, donationService, "Requests PaymentIntent creation")
+Rel(donationScreen, stripeSDK, "Initializes and presents PaymentSheet")
+Rel(donationService, donationController, "POST /api/donations/create-payment-intent", "HTTPS/JSON")
+Rel(donationController, stripeService, "Creates PaymentIntent")
+Rel(stripeService, stripeAPI, "stripe.paymentIntents.create()", "HTTPS")
+Rel(stripeSDK, stripeAPI, "Tokenizes card, confirms payment", "HTTPS")
+
+@enduml

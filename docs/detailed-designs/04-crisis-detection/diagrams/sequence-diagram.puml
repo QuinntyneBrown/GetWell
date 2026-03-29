@@ -1,0 +1,85 @@
+@startuml
+scale max 1024 width
+
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam sequenceArrowThickness 1
+skinparam sequenceParticipantBorderColor #888888
+skinparam sequenceLifeLineBorderColor #AAAAAA
+
+title Crisis Detection & Resource Referral — Sequence Diagram
+
+actor User
+participant "ChatScreen\n(React Native)" as Chat
+participant "Chat Controller\n(Express)" as API
+participant "CrisisDetection\nService" as CDS
+participant "KeywordMatcher" as KM
+participant "CrisisAnalyzer" as CA
+participant "Claude API" as Claude
+participant "OS Deep Link\n(tel: / sms:)" as OS
+
+== User Sends Concerning Message ==
+
+User -> Chat : Types and sends message
+Chat -> API : POST /api/chat\n{ message, sessionId }
+
+API -> CDS : analyze(message, history)
+activate CDS
+
+CDS -> KM : match(message)
+activate KM
+KM --> CDS : { matched: true,\nkeywords: [...],\nlevel: MODERATE }
+deactivate KM
+
+alt Keyword level >= MODERATE
+  CDS --> CDS : Skip Claude analysis\n(fast path)
+else Keyword level < MODERATE
+  CDS -> CA : analyze(message, history)
+  activate CA
+  CA -> Claude : POST /messages\n(crisis assessment prompt)
+  Claude --> CA : { isCrisis, reasoning,\nsuggestedLevel }
+  CA --> CDS : ClaudeAnalysis
+  deactivate CA
+end
+
+CDS --> API : CrisisDetectionResult\n{ crisisDetected: true,\ncrisisLevel, confidence }
+deactivate CDS
+
+API -> Claude : POST /messages\n(chat response prompt)
+Claude --> API : AI response text
+
+API --> Chat : { message: "...",\ncrisisDetection: {\n  crisisDetected: true,\n  crisisLevel: "moderate" }}
+
+== Client Renders Crisis Banner ==
+
+Chat -> Chat : dispatch(SET_CRISIS_DETECTED)
+Chat -> Chat : Render CrisisBanner\nin message list
+
+User -> Chat : Sees crisis banner
+
+== User Taps Call Button ==
+
+User -> Chat : Taps "Call 988 Lifeline"
+Chat -> OS : Linking.openURL("tel:988")
+OS -> User : Phone dialer opens
+
+== User Taps Text Button ==
+
+User -> Chat : Taps "Text HOME to 741741"
+Chat -> OS : Linking.openURL(\n"sms:741741?body=HOME")
+OS -> User : SMS app opens
+
+== User Views All Resources ==
+
+User -> Chat : Taps "View all crisis resources"
+Chat -> Chat : navigation.navigate(\n"CrisisResources")
+
+participant "CrisisResources\nScreen" as CRS
+Chat -> CRS : Navigate
+CRS -> User : Displays 4 resource cards
+
+User -> CRS : Taps resource action button
+CRS -> OS : Linking.openURL("tel:...")
+OS -> User : Phone dialer opens
+
+@enduml

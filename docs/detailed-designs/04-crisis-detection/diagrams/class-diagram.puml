@@ -1,0 +1,126 @@
+@startuml
+scale max 1024 width
+
+skinparam classAttributeIconSize 0
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam class {
+  BackgroundColor #FEFEFE
+  BorderColor #888888
+  ArrowColor #555555
+}
+
+title Crisis Detection & Resource Referral — Class Diagram
+
+package "Types" {
+  enum CrisisLevel {
+    NONE
+    LOW
+    MODERATE
+    HIGH
+    CRITICAL
+  }
+
+  interface CrisisResource {
+    +id: string
+    +name: string
+    +description: string
+    +contactDisplay: string
+    +phoneNumber: string
+    +actionType: "call" | "text"
+    +smsBody?: string
+    +iconName: string
+    +tags?: string[]
+  }
+
+  interface CrisisDetectionResult {
+    +crisisDetected: boolean
+    +crisisLevel: CrisisLevel
+    +confidence: number
+    +matchedKeywords: string[]
+    +claudeAnalysis?: ClaudeAnalysis
+    +timestamp: string
+  }
+
+  interface ClaudeAnalysis {
+    +isCrisis: boolean
+    +reasoning: string
+    +suggestedLevel: CrisisLevel
+  }
+}
+
+package "Server — Crisis Detection" {
+  class CrisisDetectionService {
+    -keywordMatcher: KeywordMatcher
+    -crisisAnalyzer: CrisisAnalyzer
+    -threshold: number
+    +analyze(message: string, history: string[]): CrisisDetectionResult
+  }
+
+  class KeywordMatcher {
+    -keywordTiers: Map<CrisisLevel, string[]>
+    +match(message: string): KeywordMatchResult
+  }
+
+  class CrisisAnalyzer {
+    -claudeClient: ClaudeApiClient
+    +analyze(message: string, history: string[]): ClaudeAnalysis
+  }
+}
+
+package "Client — Components" {
+  class CrisisBanner <<React.FC>> {
+    +onViewAllResources: () => void
+    --
+    Renders crisis banner card in chat
+    with call/text buttons and link
+  }
+
+  class CrisisCallButton <<React.FC>> {
+    +label: string
+    +phoneNumber: string
+    --
+    Opens tel: deep link
+  }
+
+  class CrisisTextButton <<React.FC>> {
+    +label: string
+    +phoneNumber: string
+    +body: string
+    --
+    Opens sms: deep link
+  }
+
+  class CrisisResourcesScreen <<React.FC>> {
+    --
+    Displays all crisis resources
+    with IntroCard, ResourceCards, footer
+  }
+
+  class ResourceCard <<React.FC>> {
+    +resource: CrisisResource
+    --
+    Renders single resource with
+    icon, info, and action button
+  }
+
+  class IntroCard <<React.FC>> {
+    --
+    Heart-handshake icon + empathetic
+    message at top of resources screen
+  }
+}
+
+CrisisDetectionService --> KeywordMatcher : uses
+CrisisDetectionService --> CrisisAnalyzer : uses
+CrisisDetectionService ..> CrisisDetectionResult : returns
+KeywordMatcher ..> CrisisLevel : references
+CrisisAnalyzer ..> ClaudeAnalysis : returns
+
+CrisisBanner --> CrisisCallButton : contains
+CrisisBanner --> CrisisTextButton : contains
+CrisisResourcesScreen --> IntroCard : contains
+CrisisResourcesScreen --> ResourceCard : contains
+ResourceCard ..> CrisisResource : uses
+
+@enduml

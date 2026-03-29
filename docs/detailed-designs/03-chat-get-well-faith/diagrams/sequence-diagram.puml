@@ -1,0 +1,63 @@
+@startuml
+scale max 1024 width
+
+skinparam sequenceMessageAlign center
+skinparam defaultFontSize 12
+skinparam shadowing false
+
+title Get Well Faith — Message Sequence
+
+actor User
+participant "FaithChatScreen\n(Mobile)" as Screen
+participant "FaithChatService\n(Mobile)" as Service
+participant "ChatController\n(API Server)" as Controller
+participant "FaithResponseParser\n(API Server)" as Parser
+participant "Claude API\n(Anthropic)" as Claude
+
+User -> Screen: Types message and taps Send
+activate Screen
+
+Screen -> Screen: Add user message to state\nShow loading indicator
+
+Screen -> Service: sendMessage(sessionId,\ntext, history, mode="faith")
+activate Service
+
+Service -> Controller: POST /api/chat\n{ sessionId, message,\n  mode: "faith", history }
+activate Controller
+
+Controller -> Controller: Select faith system prompt\nfrom FaithSystemPromptConfig
+
+Controller -> Claude: messages.create()\nwith faith system prompt\n+ conversation history
+activate Claude
+
+Claude --> Controller: Raw response with\n[SCRIPTURE] and [PRAYER] markers
+deactivate Claude
+
+Controller -> Parser: parse(rawContent)
+activate Parser
+
+Parser -> Parser: Extract [SCRIPTURE]...[/SCRIPTURE]\nExtract [REF]...[/REF]\nExtract [PRAYER]...[/PRAYER]\nStrip markers from content
+
+Parser --> Controller: { content, scripture?, prayerPrompt? }
+deactivate Parser
+
+Controller --> Service: FaithMessage JSON response
+deactivate Controller
+
+Service --> Screen: FaithMessage object
+deactivate Service
+
+Screen -> Screen: Add FaithMessage to state\nClear loading indicator
+
+alt Message has scripture
+  Screen -> Screen: Render ScriptureBlock\ninside AI bubble
+end
+
+alt Message has prayer prompt
+  Screen -> Screen: Render PrayerPromptCard\nbelow AI bubble
+end
+
+Screen --> User: Display AI response with\nscripture block and/or prayer card
+deactivate Screen
+
+@enduml

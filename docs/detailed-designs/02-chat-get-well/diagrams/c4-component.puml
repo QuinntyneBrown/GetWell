@@ -1,0 +1,40 @@
+@startuml
+scale max 1024 width
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_LEFT_RIGHT()
+
+title Chat Interface - Get Well Mode: C4 Component Diagram
+
+Person(user, "User", "Person seeking anonymous emotional support")
+
+System_Boundary(mobileApp, "Mobile App (React Native / Expo)") {
+  Component(chatScreen, "ChatScreen", "React Component", "Root screen: orchestrates state and services via useReducer")
+  Component(chatHeader, "ChatHeader", "React Component", "Displays 'Get Well' title, subtitle, back/more nav")
+  Component(chatArea, "ChatArea", "React Component", "Scrollable FlatList of MessageBubble components")
+  Component(chatInput, "ChatInput", "React Component", "Text input with send button, placeholder text")
+  Component(chatService, "ChatService", "TypeScript Class", "API client: POST /api/chat, handles errors and timeouts")
+  Component(sessionMgr, "SessionManager", "TypeScript Class", "Creates/destroys anonymous sessions (UUID v4, client-side)")
+}
+
+System_Boundary(apiServer, "API Server (Node.js / Express)") {
+  Component(chatController, "ChatController", "Express Handler", "Validates requests, manages conversation context, checks crisis signals")
+  Component(claudeService, "ClaudeService", "TypeScript Class", "Wraps Anthropic SDK, sends conversation history with empathy system prompt")
+  Component(convStore, "ConversationStore", "TypeScript Class", "In-memory Map of session conversation history, 30-min TTL")
+}
+
+System_Ext(claudeApi, "Claude API", "Anthropic's LLM API for generating empathetic AI responses")
+
+Rel(user, chatScreen, "Interacts with chat UI")
+Rel(chatScreen, chatHeader, "Renders")
+Rel(chatScreen, chatArea, "Renders messages")
+Rel(chatScreen, chatInput, "Renders input")
+Rel(chatScreen, sessionMgr, "Creates anonymous session")
+Rel(chatInput, chatService, "Sends user message")
+Rel(chatService, chatController, "POST /api/chat", "HTTPS/JSON")
+Rel(chatController, convStore, "Reads/writes conversation history")
+Rel(chatController, claudeService, "Requests AI response")
+Rel(claudeService, claudeApi, "messages.create()", "HTTPS/JSON")
+
+@enduml

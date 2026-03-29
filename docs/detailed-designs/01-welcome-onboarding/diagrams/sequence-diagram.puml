@@ -1,0 +1,60 @@
+@startuml sequence-diagram
+scale max 1024 width
+
+skinparam backgroundColor #FFFFFF
+skinparam sequenceMessageAlign center
+skinparam defaultFontName Segoe UI
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam sequenceLifeLineBorderColor #6C757D
+skinparam sequenceParticipantBackgroundColor #F8F9FA
+skinparam sequenceParticipantBorderColor #6C757D
+skinparam sequenceArrowColor #495057
+skinparam sequenceDividerBackgroundColor #E9ECEF
+skinparam sequenceGroupBackgroundColor #F1F3F5
+skinparam noteBackgroundColor #FFF9DB
+
+actor User
+participant "React\nNavigation" as Nav
+participant "WelcomeScreen" as WS
+participant "LogoSection" as Logo
+participant "ModeSelector" as MS
+participant "ModeCard" as MC
+participant "PrivacyBanner" as PB
+participant "ChatScreen" as Chat
+
+== App Launch ==
+
+User -> Nav : Opens app
+Nav -> WS : mount (initialRoute = "Welcome")
+activate WS
+
+WS -> Logo : render
+WS -> MS : render(onModeSelect)
+MS -> MC : render("Get Well" card)
+MS -> MC : render("Get Well Faith" card)
+WS -> PB : render
+
+WS --> User : Screen displayed
+
+== Mode Selection ==
+
+alt User selects "Get Well"
+  User -> MC : tap "Get Well" card
+  MC -> MS : onSelect("getwell")
+  MS -> WS : onModeSelect("getwell")
+  WS -> Nav : navigate("Chat", { mode: "getwell" })
+else User selects "Get Well Faith"
+  User -> MC : tap "Get Well Faith" card
+  MC -> MS : onSelect("getwell-faith")
+  MS -> WS : onModeSelect("getwell-faith")
+  WS -> Nav : navigate("Chat", { mode: "getwell-faith" })
+end
+
+Nav -> Chat : mount with mode param
+deactivate WS
+activate Chat
+
+Chat --> User : Chat screen displayed
+
+@enduml

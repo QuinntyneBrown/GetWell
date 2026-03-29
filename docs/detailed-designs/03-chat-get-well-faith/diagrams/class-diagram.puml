@@ -1,0 +1,152 @@
+@startuml
+scale max 1024 width
+
+skinparam classAttributeIconSize 0
+skinparam classFontSize 12
+skinparam packageFontSize 13
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam padding 2
+
+title Get Well Faith — Class Diagram
+
+package "Base Chat Components" as base <<Rectangle>> {
+  class ChatScreen {
+    +mode: ChatMode
+    +sessionId: string
+    +render(): JSX.Element
+  }
+
+  class MessageBubble {
+    +message: Message
+    +role: "user" | "assistant"
+    +render(): JSX.Element
+  }
+
+  class ChatInput {
+    +placeholder: string
+    +accentColor: string
+    +onSend(text: string): void
+  }
+
+  class ChatArea {
+    +messages: Message[]
+    +renderItem(msg: Message): JSX.Element
+  }
+
+  class ChatService {
+    +sendMessage(sessionId, message, history): Promise<Message>
+  }
+
+  interface Message {
+    +id: string
+    +role: "user" | "assistant"
+    +content: string
+    +timestamp: number
+    +sessionId: string
+  }
+}
+
+package "Faith Chat Components" as faith <<Rectangle>> {
+  class FaithChatScreen {
+    +mode: "faith"
+    +render(): JSX.Element
+  }
+
+  class FaithChatHeader {
+    +title: "Get Well Faith"
+    +subtitle: "Guided by grace"
+    +accentColor: "#D89575"
+    +onBack(): void
+  }
+
+  class FaithMessageBubble {
+    +message: FaithMessage
+    +renderScripture(): JSX.Element
+    +renderPrayer(): JSX.Element
+  }
+
+  class ScriptureBlock {
+    +text: string
+    +reference: string
+    +render(): JSX.Element
+  }
+
+  class PrayerPromptCard {
+    +promptText: string
+    +render(): JSX.Element
+  }
+
+  class FaithChatInput {
+    +placeholder: "Share what's on your heart..."
+    +accentColor: "#D89575"
+  }
+
+  interface FaithMessage extends Message {
+    +scripture?: ScriptureReference
+    +prayerPrompt?: PrayerPrompt
+  }
+
+  interface ScriptureReference {
+    +text: string
+    +reference: string
+    +version?: string
+  }
+
+  interface PrayerPrompt {
+    +promptText: string
+  }
+}
+
+package "Backend Services" as backend <<Rectangle>> {
+  class FaithChatService {
+    +mode: "faith"
+    +sendMessage(sessionId, msg, history): Promise<FaithMessage>
+  }
+
+  class FaithResponseParser {
+    +{static} parse(raw: string): ParsedResponse
+    -extractScripture(text: string): ScriptureReference
+    -extractPrayer(text: string): PrayerPrompt
+    -stripMarkers(text: string): string
+  }
+
+  class FaithSystemPromptConfig {
+    +mode: "faith"
+    +systemPrompt: string
+    +scriptureMarkerStart: string
+    +scriptureMarkerEnd: string
+    +prayerMarkerStart: string
+    +prayerMarkerEnd: string
+  }
+
+  class ChatController {
+    +handleChat(req, res): void
+    -selectPrompt(mode: string): string
+  }
+}
+
+' Inheritance
+FaithChatScreen --|> ChatScreen
+FaithMessageBubble --|> MessageBubble
+FaithChatInput --|> ChatInput
+FaithChatService --|> ChatService
+
+' Composition
+FaithChatScreen *-- FaithChatHeader
+FaithChatScreen *-- ChatArea
+FaithChatScreen *-- FaithChatInput
+FaithMessageBubble *-- ScriptureBlock
+FaithMessageBubble *-- PrayerPromptCard
+ChatArea o-- FaithMessageBubble
+
+' Dependencies
+FaithChatService ..> FaithResponseParser : uses
+FaithChatService ..> FaithSystemPromptConfig : reads
+ChatController ..> FaithSystemPromptConfig : selects prompt
+ChatController ..> FaithResponseParser : parses response
+FaithMessageBubble ..> FaithMessage : renders
+ScriptureBlock ..> ScriptureReference : displays
+PrayerPromptCard ..> PrayerPrompt : displays
+
+@enduml

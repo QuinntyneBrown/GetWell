@@ -1,0 +1,129 @@
+@startuml
+scale max 1024 width
+skinparam classAttributeIconSize 0
+skinparam classFontSize 12
+skinparam packageFontSize 13
+skinparam shadowing false
+skinparam defaultFontName Outfit
+
+title Donation Screen — Class Diagram
+
+package "Mobile App" {
+  package "Screens" {
+    class DonationScreen {
+      - state: DonationState
+      - dispatch: Dispatch<DonationAction>
+      + handleDonate(): void
+      + handleSelectPreset(amount: number): void
+      + handleSelectCustom(): void
+    }
+  }
+
+  package "Components" {
+    class MissionCard {
+      + render(): JSX.Element
+    }
+
+    class AmountSelector {
+      + amounts: DonationAmount[]
+      + selectedAmount: number
+      + isCustomSelected: boolean
+      + onSelectPreset(amount: number): void
+      + onSelectCustom(): void
+    }
+
+    class AmountButton {
+      + amount: DonationAmount
+      + isSelected: boolean
+      + onSelect(): void
+    }
+
+    class CustomAmountInput {
+      + value: string
+      + onChangeText(text: string): void
+    }
+
+    class DonateButton {
+      + amount: number
+      + isLoading: boolean
+      + disabled: boolean
+      + onDonate(): void
+    }
+
+    class TrustBadgeRow {
+      + render(): JSX.Element
+    }
+  }
+
+  package "Services" {
+    class DonationService {
+      + createPaymentIntent(amount: number): Promise<PaymentIntentResponse>
+    }
+  }
+
+  package "Interfaces" <<Rectangle>> {
+    interface DonationAmount {
+      + value: number
+      + label: string
+      + isCustom: boolean
+    }
+
+    interface DonationState {
+      + selectedAmount: number
+      + customAmountText: string
+      + isCustomSelected: boolean
+      + paymentStatus: PaymentStatus
+      + errorMessage: string | null
+    }
+
+    interface PaymentIntentResponse {
+      + clientSecret: string
+      + paymentIntentId: string
+      + amount: number
+      + currency: string
+    }
+  }
+}
+
+package "API Server" {
+  class DonationController {
+    + createPaymentIntent(req, res): void
+    + confirmDonation(req, res): void
+  }
+
+  class StripeService {
+    + createPaymentIntent(amountCents: number): Promise<PaymentIntent>
+    + retrievePaymentIntent(id: string): Promise<PaymentIntent>
+  }
+}
+
+package "External" {
+  class "Stripe API" as StripeAPI {
+    + paymentIntents.create()
+    + paymentIntents.retrieve()
+  }
+
+  class "Stripe PaymentSheet" as PaymentSheet {
+    + initPaymentSheet()
+    + presentPaymentSheet()
+  }
+}
+
+DonationScreen --> MissionCard
+DonationScreen --> AmountSelector
+DonationScreen --> DonateButton
+DonationScreen --> TrustBadgeRow
+DonationScreen --> DonationService
+DonationScreen --> PaymentSheet
+
+AmountSelector --> AmountButton
+AmountSelector --> CustomAmountInput
+AmountSelector ..> DonationAmount
+
+DonationService ..> PaymentIntentResponse
+DonationService --> DonationController : HTTP POST
+
+DonationController --> StripeService
+StripeService --> StripeAPI
+
+@enduml

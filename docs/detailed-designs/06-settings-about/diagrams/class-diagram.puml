@@ -1,0 +1,96 @@
+@startuml class-diagram
+scale max 1024 width
+
+skinparam backgroundColor #FFFFFF
+skinparam classBackgroundColor #F8F9FA
+skinparam classBorderColor #6C757D
+skinparam classHeaderBackgroundColor #E9ECEF
+skinparam classFontSize 11
+skinparam defaultFontName Segoe UI
+skinparam arrowColor #495057
+skinparam packageBackgroundColor #FFFFFF
+skinparam packageBorderColor #ADB5BD
+skinparam shadowing false
+skinparam nodesep 40
+skinparam ranksep 40
+
+package "Types" <<Rectangle>> {
+  interface NavigationLink {
+    id: string
+    label: string
+    iconName: string
+    iconColor: string
+    targetScreen?: keyof RootStackParamList
+    externalUrl?: string
+  }
+
+  interface AboutCardProps {
+    onWebsiteLinkPress?(): void
+  }
+
+  interface NavigationLinkListProps {
+    links: NavigationLink[]
+    onLinkPress(link: NavigationLink): void
+  }
+
+  interface NavigationLinkRowProps {
+    link: NavigationLink
+    onPress(): void
+    showBorder: boolean
+  }
+}
+
+package "Screens" <<Rectangle>> {
+  class SettingsScreen <<FC>> {
+    +navigation: NativeStackNavigationProp
+    --
+    handleLinkPress(link: NavigationLink): void
+    handleBack(): void
+    render(): JSX.Element
+  }
+}
+
+package "Components" <<Rectangle>> {
+  class AboutCard <<FC>> {
+    +props: AboutCardProps
+    --
+    render(): JSX.Element
+  }
+
+  class PrivacyCard <<FC>> {
+    render(): JSX.Element
+  }
+
+  class NavigationLinkList <<FC>> {
+    +props: NavigationLinkListProps
+    --
+    render(): JSX.Element
+  }
+
+  class NavigationLinkRow <<FC>> {
+    +props: NavigationLinkRowProps
+    --
+    render(): JSX.Element
+  }
+
+  class VersionFooter <<FC>> {
+    --
+    appVersion: string
+    render(): JSX.Element
+  }
+}
+
+SettingsScreen *-- AboutCard : contains
+SettingsScreen *-- PrivacyCard : contains
+SettingsScreen *-- NavigationLinkList : contains
+SettingsScreen *-- VersionFooter : contains
+NavigationLinkList *-- "4" NavigationLinkRow : contains
+
+AboutCard .up.> AboutCardProps : implements
+NavigationLinkList .up.> NavigationLinkListProps : implements
+NavigationLinkRow .up.> NavigationLinkRowProps : implements
+NavigationLinkListProps .> NavigationLink : uses
+NavigationLinkRowProps .> NavigationLink : uses
+SettingsScreen ..> NavigationLink : handles press
+
+@enduml

@@ -1,0 +1,55 @@
+@startuml c4-component
+scale max 1024 width
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+LAYOUT_TOP_DOWN()
+
+title Component Diagram - Settings / About Screen
+
+Person(user, "User", "A person seeking anonymous emotional support")
+
+System_Boundary(mobileApp, "Get Well Mobile App") {
+
+  Container_Boundary(settingsFeature, "Settings Feature") {
+    Component(settingsScreen, "SettingsScreen", "React Native Screen", "Root screen: renders about info, privacy card, navigation links, and version footer")
+    Component(aboutCard, "AboutCard", "React Component", "Displays app name, mission statement, 501(c)(3) status, and website link")
+    Component(privacyCard, "PrivacyCard", "React Component", "Shield icon and privacy assurance: no accounts, no data, anonymous sessions")
+    Component(navLinkList, "NavigationLinkList", "React Component", "Renders list of navigation link rows in a single card")
+    Component(navLinkRow, "NavigationLinkRow", "React Component", "Pressable row with icon, label, and chevron for a single navigation action")
+    Component(versionFooter, "VersionFooter", "React Component", "Footer text and app version from expo-constants")
+  }
+
+  Container_Boundary(navigation, "Navigation") {
+    Component(stackNav, "StackNavigator", "React Navigation", "Manages screen stack and transitions between all app screens")
+  }
+
+  Container_Boundary(otherScreens, "Other Screens") {
+    Component(welcomeScreen, "WelcomeScreen", "React Native Screen", "Mode selection screen for Get Well / Get Well Faith")
+    Component(crisisScreen, "CrisisResourcesScreen", "React Native Screen", "Crisis hotlines and emergency resources")
+    Component(donationScreen, "DonationScreen", "React Native Screen", "Stripe-powered donation flow")
+  }
+}
+
+System_Ext(getwellSite, "getwell.help", "Nonprofit website with organization info")
+System_Ext(termsUrl, "Terms & Privacy Policy", "Legal documents hosted at getwell.help/terms")
+System_Ext(expoConstants, "expo-constants", "Expo module providing app version from build config")
+
+Rel(user, settingsScreen, "Opens settings from chat menu")
+Rel(settingsScreen, aboutCard, "Renders")
+Rel(settingsScreen, privacyCard, "Renders")
+Rel(settingsScreen, navLinkList, "Renders")
+Rel(navLinkList, navLinkRow, "Contains 4 instances")
+Rel(settingsScreen, versionFooter, "Renders")
+
+Rel(navLinkRow, stackNav, "onPress triggers navigate()")
+Rel(stackNav, welcomeScreen, "Switch Mode")
+Rel(stackNav, crisisScreen, "Crisis Resources")
+Rel(stackNav, donationScreen, "Support Get Well")
+
+Rel(aboutCard, getwellSite, "Opens via Linking.openURL")
+Rel(navLinkRow, termsUrl, "Opens via Linking.openURL")
+Rel(versionFooter, expoConstants, "Reads app version")
+
+@enduml

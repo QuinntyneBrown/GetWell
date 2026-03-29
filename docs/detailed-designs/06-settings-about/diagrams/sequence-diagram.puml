@@ -1,0 +1,80 @@
+@startuml sequence-diagram
+scale max 1024 width
+
+skinparam backgroundColor #FFFFFF
+skinparam sequenceMessageAlign center
+skinparam defaultFontName Segoe UI
+skinparam defaultFontSize 12
+skinparam shadowing false
+skinparam sequenceLifeLineBorderColor #6C757D
+skinparam sequenceParticipantBackgroundColor #F8F9FA
+skinparam sequenceParticipantBorderColor #6C757D
+skinparam sequenceArrowColor #495057
+skinparam sequenceDividerBackgroundColor #E9ECEF
+skinparam sequenceGroupBackgroundColor #F1F3F5
+skinparam noteBackgroundColor #FFF9DB
+
+actor User
+participant "ChatScreen" as Chat
+participant "React\nNavigation" as Nav
+participant "SettingsScreen" as SS
+participant "NavigationLinkList" as NLL
+participant "Linking" as Link
+participant "WelcomeScreen" as WS
+participant "CrisisResources\nScreen" as CR
+participant "DonationScreen" as DS
+
+== Open Settings ==
+
+User -> Chat : Tap settings icon
+Chat -> Nav : navigate("Settings")
+Nav -> SS : mount
+activate SS
+
+SS -> SS : render AboutCard, PrivacyCard,\nNavigationLinkList, VersionFooter
+SS --> User : Settings screen displayed
+
+== Navigate: Switch Mode ==
+
+User -> NLL : Tap "Switch Mode"
+NLL -> SS : onLinkPress({ targetScreen: "Welcome" })
+SS -> Nav : navigate("Welcome")
+Nav -> WS : mount
+deactivate SS
+
+== Navigate: Crisis Resources ==
+
+User -> NLL : Tap "Crisis Resources"
+NLL -> SS : onLinkPress({ targetScreen: "CrisisResources" })
+activate SS
+SS -> Nav : navigate("CrisisResources")
+Nav -> CR : mount
+deactivate SS
+
+== Navigate: Support Get Well ==
+
+User -> NLL : Tap "Support Get Well"
+NLL -> SS : onLinkPress({ targetScreen: "Donation" })
+activate SS
+SS -> Nav : navigate("Donation")
+Nav -> DS : mount
+deactivate SS
+
+== External Link: Terms & Privacy ==
+
+User -> NLL : Tap "Terms & Privacy Policy"
+NLL -> SS : onLinkPress({ externalUrl: "https://..." })
+activate SS
+SS -> Link : openURL("https://getwell.help/terms")
+Link --> User : Opens in external browser
+deactivate SS
+
+== Back Navigation ==
+
+User -> SS : Tap back chevron
+activate SS
+SS -> Nav : goBack()
+Nav -> Chat : return to previous screen
+deactivate SS
+
+@enduml
