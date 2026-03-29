@@ -23,19 +23,37 @@ Be there for the person who has no one to call at 3am. The person who can't affo
 
 ## Tech Stack
 
-- **Mobile:** React Native (iOS and Android)
-- **AI:** API integration for conversational chat
-- **Sessions:** Anonymous session handling — no accounts, no PII
-- **Payments:** Donation processing for 501(c)(3) contributions
+- **Mobile:** React Native 0.79 with React Navigation
+- **Backend:** Node.js / Express / TypeScript
+- **AI:** Anthropic Claude API (conversational chat + crisis analysis)
+- **Payments:** Stripe (donation processing for 501(c)(3) contributions)
+- **Sessions:** Anonymous in-memory sessions — no accounts, no PII
+- **Testing:** Jest + Detox (E2E)
 
 ## Project Structure
 
 ```
-docs/
-  specs/
-    L1.md          # High-level requirements
-    L2.md          # Detailed requirements with acceptance criteria
-  ui-design.pen   # App screen designs (7 screens)
+├── App.tsx                        # App entry point
+├── src/
+│   ├── components/                # ChatBubble, ChatInput, PrayerPrompt, ScriptureBlock, ScreenHeader
+│   ├── navigation/AppNavigator.tsx
+│   ├── screens/                   # Screen implementations
+│   ├── theme/                     # Colors, spacing, typography
+│   └── types/                     # Shared TypeScript types
+├── server/
+│   └── src/
+│       ├── controllers/           # ChatController, DonationController
+│       ├── routes/                # Chat and donation API routes
+│       ├── services/              # ClaudeService, StripeService, ConversationStore,
+│       │   └── crisis/            # CrisisDetectionService, CrisisAnalyzer, KeywordMatcher
+│       └── types/                 # Chat, crisis, donation types
+├── e2e/                           # Detox E2E tests (screenplay pattern)
+├── docs/
+│   ├── specs/                     # L1 (high-level) and L2 (detailed) requirements
+│   ├── detailed-designs/          # Per-screen technical designs with diagrams
+│   ├── screens/                   # Screen mockup PNGs (7 screens)
+│   ├── infrastructure-costs.md    # Hosting & AI provider cost estimates
+│   └── ui-design.pen              # App screen designs
 ```
 
 ## Design
