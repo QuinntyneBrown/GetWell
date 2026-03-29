@@ -54,4 +54,4 @@ Thank you for your interest in contributing to Get Well. This project exists to 
 
 ## Questions?
 
-Reach out to Kevin Devoto at Kevinmdevo@yahoo.com or visit [getwell.help](https://getwell.help).
+Visit [getwell.help](https://getwell.help) to learn more or get in touch.

@@ -1,0 +1,103 @@
+@startuml class-diagram
+scale max 1024 width
+
+skinparam backgroundColor #FFFFFF
+skinparam classBackgroundColor #F8F9FA
+skinparam classBorderColor #6C757D
+skinparam classHeaderBackgroundColor #E9ECEF
+skinparam classFontSize 11
+skinparam defaultFontName Segoe UI
+skinparam arrowColor #495057
+skinparam packageBackgroundColor #FFFFFF
+skinparam packageBorderColor #ADB5BD
+skinparam shadowing false
+skinparam nodesep 40
+skinparam ranksep 40
+
+package "Types" <<Rectangle>> {
+  enum AppMode {
+    getwell
+    getwell-faith
+  }
+
+  interface RootStackParamList {
+    Welcome: undefined
+    Chat: { mode: AppMode }
+    CrisisResources: undefined
+    Donation: undefined
+    Settings: undefined
+  }
+
+  interface ModeCardProps {
+    mode: AppMode
+    title: string
+    description: string
+    iconName: string
+    iconColor: string
+    iconBackgroundColor: string
+    onSelect(mode: AppMode): void
+  }
+
+  interface ModeSelectorProps {
+    onModeSelect(mode: AppMode): void
+  }
+
+  interface ModeConfig {
+    mode: AppMode
+    title: string
+    description: string
+    iconName: string
+    iconColor: string
+    iconBackgroundColor: string
+  }
+}
+
+package "Screens" <<Rectangle>> {
+  class WelcomeScreen <<FC>> {
+    +navigation: NativeStackNavigationProp
+    --
+    handleModeSelect(mode: AppMode): void
+    render(): JSX.Element
+  }
+}
+
+package "Components" <<Rectangle>> {
+  class LogoSection <<FC>> {
+    render(): JSX.Element
+  }
+
+  class MissionText <<FC>> {
+    render(): JSX.Element
+  }
+
+  class ModeSelector <<FC>> {
+    +props: ModeSelectorProps
+    --
+    render(): JSX.Element
+  }
+
+  class ModeCard <<FC>> {
+    +props: ModeCardProps
+    --
+    render(): JSX.Element
+  }
+
+  class PrivacyBanner <<FC>> {
+    render(): JSX.Element
+  }
+}
+
+WelcomeScreen *-- LogoSection : contains
+WelcomeScreen *-- MissionText : contains
+WelcomeScreen *-- ModeSelector : contains
+WelcomeScreen *-- PrivacyBanner : contains
+ModeSelector *-- "2" ModeCard : contains
+
+ModeCard .up.> ModeCardProps : implements
+ModeSelector .up.> ModeSelectorProps : implements
+ModeCardProps .> AppMode : uses
+ModeSelectorProps .> AppMode : uses
+ModeConfig .> AppMode : uses
+WelcomeScreen ..> RootStackParamList : navigates via
+
+@enduml

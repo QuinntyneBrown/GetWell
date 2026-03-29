@@ -35,7 +35,7 @@ docs/
   specs/
     L1.md          # High-level requirements
     L2.md          # Detailed requirements with acceptance criteria
-ui-design.pen     # App screen designs (7 screens)
+  ui-design.pen   # App screen designs (7 screens)
 ```
 
 ## Design
@@ -72,8 +72,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get involved.
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-## Contact
-
-Kevin Devoto | [getwell.help](https://getwell.help) | Kevinmdevo@yahoo.com
-
-The nonprofit is being formed in Wyoming. The business plan, cost projections, and one-pager are complete.
